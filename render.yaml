@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: login-webapp
+    env: docker
+    repo: https://github.com/anirudhsarkar28/render-deploy
+    region: oregon
+    plan: free
+    branch: main
+    rootDir: .                 # Fine as long as Dockerfile is in root
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: DB_USER
+        sync: false            # Will set this in dashboard (Render UI)
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_URL
+        sync: false
